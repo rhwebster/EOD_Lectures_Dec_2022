@@ -1,3 +1,3 @@
-function myDotLength(input) {
+function myDotLength() {
 
 };

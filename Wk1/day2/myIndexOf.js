@@ -1,3 +1,3 @@
-function myIndexOf(input, target) {
+function myIndexOf() {
   
 };
