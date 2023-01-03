@@ -6,13 +6,9 @@ Array.indexOf.
 */
 
 function myIndexOf(arr, target) {
-    let i = 0;
-
-    while (arr[i] !== undefined) {
-        if (arr[i] === target) {
-            return i;
-        }
-        i++;
+    
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === target) return i;
     }
 
     return -1;
@@ -20,4 +16,4 @@ function myIndexOf(arr, target) {
 
 
 console.log(myIndexOf([1, 2, 3, 4, 5], 4));
-console.log(myIndexOf([1, 2, 3, 4, 5], 6));
+console.log(myIndexOf([1, 2, 3, 4, 5], ));
