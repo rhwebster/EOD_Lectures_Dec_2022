@@ -10,8 +10,23 @@ console.log(longestWord('prefer simplicity over complexity')); // 'simplicity'
 console.log(longestWord('')); // ''
 */
 
+// first we break up the sentence into different words .split(' ')
+// find max length, so set variable
+// iterate through array, and check if array[i] has greater length than max
+// if so, set value to max length
+// find the word that the length matches and return the word
+
 let longestWord = function(sentence) {
-    
+    let strings = sentence.split(' ');
+    let max = '';
+
+    strings.forEach((word) => {
+        if (word.length > max.length) {
+            max = word;
+        }
+    })
+
+    return max;
 }
 
 console.log(longestWord('where did everyone go')); // 'everyone'
