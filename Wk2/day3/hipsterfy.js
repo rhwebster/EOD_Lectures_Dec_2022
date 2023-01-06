@@ -16,7 +16,16 @@ console.log(hipsterfy('panthers are great animals')); // 'panthrs ar gret animls
 // remove using slice method
 // return our new word
 
-let removeLastVowel = function (word) {
+console.log(removeLastVowel('hello'));
+console.log(removeLastVowel('goodbye'));
+console.log(removeLastVowel('please'));
+console.log(removeLastVowel('rhythm'));
+console.log(removeLastVowel('laser'));
+console.log(hipsterfy('When should everyone wake up?')); // 'Whn shold everyon wak p?'
+console.log(hipsterfy('get ready for our bootcamp')); // 'gt redy fr or bootcmp'
+console.log(hipsterfy('panthers are great animals')); // 'panthrs ar gret animls'
+
+function removeLastVowel(word) {
     let vowels = 'AEIOUaeiou';
 
     for (let i = word.length-1; i >= 0; i--) {
@@ -30,7 +39,7 @@ let removeLastVowel = function (word) {
     return word;
 };
 
-let hipsterfy = function (sentence) {
+function hipsterfy(sentence) {
     let words = sentence.split(' ');
     let hipsterfied = words.map(el => removeLastVowel(el));
     return hipsterfied.join(' ');
