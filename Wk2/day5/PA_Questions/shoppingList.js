@@ -13,7 +13,22 @@ addToClothesList('tshirt'); // returns ['tshirt']
 addToClothesList('pants'); // returns ['tshirt', 'pants']
 console.log(clothesList); // ['tshirt', 'pants']
 ***********************************************************************/
+// return new function
+// when function is invoked with argument, pushes new item to incoming list
+// return new list
 
 function shoppingList(list) {
-
+    return (item) => {
+        list.push(item);
+        return list;
+    }
 }
+
+const groceryList = ['eggs']
+const addToGroceryList = shoppingList(groceryList); // returns a function
+console.log(addToGroceryList('maple syrup')); // returns ['eggs', 'maple syrup']
+const clothesList = []
+const addToClothesList = shoppingList(clothesList);
+console.log(addToClothesList('tshirt')); // returns ['tshirt']
+console.log(addToClothesList('pants')); // returns ['tshirt', 'pants']
+console.log(clothesList); // ['tshirt', 'pants']

@@ -10,7 +10,23 @@ keyAdderUniqueVal(cat, "toy", "yarn"); // => {name: "Willie", color: "orange", t
 keyAdderUniqueVal(cat, "fruit", "orange"); // => {name: "Willie", color: "orange", toy: "yarn"}
 console.log(cat); // { name: "Willie", color: "orange", toy: "yarn" }
 ***********************************************************************/
+// take in an object
+// pull values from object keys
+// if incoming values already exists in the object, do nothing
+// if incoming value doesn't exist, insert the key and value as a pair
+// return new object
 
 function keyAdderUniqueVal(object, key, value) {
-    
+    let vals = Object.values(object);
+
+    if (vals.indexOf(value) === -1) {
+        object[key] = value;
+    };
+
+    return object;
 }
+
+let cat = { name: 'Willie', color: 'orange' };
+console.log(keyAdderUniqueVal(cat, "toy", "yarn")); // => {name: "Willie", color: "orange", toy: "yarn"}
+console.log(keyAdderUniqueVal(cat, "fruit", "orange")); // => {name: "Willie", color: "orange", toy: "yarn"}
+console.log(cat); // { name: "Willie", color: "orange", toy: "yarn" }
