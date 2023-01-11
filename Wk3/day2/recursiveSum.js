@@ -11,5 +11,26 @@ recursiveSum([1, 2, [3, 4], [5, [6, 7]]]) => 28
 */
 
 function recursiveSum(arr) {
+    let sum = 0;
 
+    console.log(`incoming array ~~>`, arr, `sum ~~>`, sum);
+
+    for (let i = 0; i < arr.length; i++) {
+        console.log(`arr[i] ~~>`, arr[i]);
+        if (Array.isArray(arr[i])) {
+            console.log(`sum before arr[i] added ~~>`, sum);
+            console.log(`sum += `, arr[i]);
+            sum += recursiveSum(arr[i]);
+            console.log(`sum after arr[i] added ~~>`, sum)
+        } else {
+            console.log(`sum before arr[i] added ~~>`, sum);
+            console.log(`sum += `, arr[i]);
+            sum += arr[i];
+            console.log(`sum after arr[i] added ~~>`, sum)
+        }
+    }
+    console.log(`returning value ~~>`, sum);
+    return sum;
 };
+ 
+ 
