@@ -49,5 +49,39 @@ on the command line.
 
 const VOWELS = ['a', 'e', 'i', 'o', 'u'];
 const mostFrequentVowel = function (words, counter = {}) {
+
+    if (!words.length) return maxCounterVowel(counter);
     
+    const lastWord = words.pop();
+    countVowels(lastWord, counter);
+
+    return mostFrequentVowel(words, counter);
+};
+
+function countVowels(word, counter) {
+    for (let i = 0; i < word.length; i++) {
+        const letter = word[i];
+        if (VOWELS.includes(letter)) {
+            if (counter[letter]) {
+                counter[letter]++;
+            } else {
+                counter[letter] = 1
+            }
+        }
+    }
+};
+
+function maxCounterVowel(counter) {
+    let max = 0;
+    let mostFrequent = '';
+
+    for (let i = 0; i < VOWELS.length; i++) {
+        const vowel = VOWELS[i];
+        if (counter[vowel] > max) {
+            max = counter[vowel];
+            mostFrequent = vowel;
+        }
+    };
+
+    return mostFrequent;
 };

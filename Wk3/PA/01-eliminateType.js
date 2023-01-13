@@ -39,11 +39,16 @@ Hint: Remember Polya's problem solving framework!
 Run tests on just this file by typing `npm test test/01-eliminate-type-spec.js`
 on the command line.
 ***********************************************************************/
+// takes in array consisting of any datatypes
+// returns a function
+// return function takes in a datatype as a string and filters out any of that datatype.
 
 function eliminateType(arr) {
-
+  return function(type) {
+    return arr.filter(el => typeof el !== type)
+  }
 };
 
 const eliminate = eliminateType([2, undefined, 'world', { color: 'red' }, true, 3, [4, 5], 'hello', false]);
-eliminate('number'); // [undefined, 'world', { color: 'red' }, true, [4, 5], 'hello', false]
-eliminate('object'); // [2, undefined, 'world', true, 3, 'hello', false]
+console.log(eliminate('number')); // [undefined, 'world', { color: 'red' }, true, [4, 5], 'hello', false]
+console.log(eliminate('object')); // [2, undefined, 'world', true, 3, 'hello', false]
