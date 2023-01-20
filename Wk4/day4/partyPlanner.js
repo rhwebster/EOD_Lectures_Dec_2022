@@ -14,7 +14,7 @@ class PartyPlanner {
         } else if (this.guestList.length === 1) {
             return `Welcome to the party ${last}`;
         } else {
-            return `Welcome to the party ` + this.guestList.join(', ') + ` and, ${last}.`
+            return `Welcome to the party ` + this.guestList.join(', ') + `, and ${last}.`
         }
     }
 }
