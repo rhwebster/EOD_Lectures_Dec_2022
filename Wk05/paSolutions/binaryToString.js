@@ -21,3 +21,4 @@ function binaryToString(binaryBlob) {
 /* Comment in the code below to run local tests */
 // console.log(binaryToString('010000010100001001000011')); // 'ABC'
 // console.log(binaryToString('001101100011011100111000')); // '678'
+console.log(binaryToString(`010011000110010101110100001001110111001100100000011001110110111100100001`));
