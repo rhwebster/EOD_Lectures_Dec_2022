@@ -8,3 +8,11 @@ Example:
     validAnagrams(s, t); => true
 */
 
+// split each word. sort the new array, then joined the array
+
+function validAnagrams(s, t) {
+    const sSorted = s.split('').sort().join('');
+    const tSorted = t.split('').sort().join('');
+
+    return sSorted === tSorted;
+}
