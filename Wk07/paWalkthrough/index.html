@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>EventSight</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.css"
+        rel="stylesheet">
+    <link rel="icon" type="image/x-icon"
+        href="https://appacademy-open-assets.s3.us-west-1.amazonaws.com/Modular-Curriculum/content/week-07/EventSight/e.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <nav>
+        <h1 id="site-name">EventSight</h1>
+
+        <span>
+            <button id="search-button" type="submit">
+                <i class="fas fa-search"></i>
+                <input id="search" type="text" placeholder="Search events" />
+            </button>
+        </span>
+
+        <div class="link-container">
+            <a class="nav-link" href="">Create Event</a>
+            <a class="nav-link" href="">Log In</a>
+            <a class="nav-link" href="">Sign Up</a>
+        </div>
+    </nav>
+
+    <div id="heading">
+        <h2>Check out trending categories</h2>
+        <div id="category-cards">
+            <button class="cat-button">
+                <i class="fas fa-music"></i>
+                <p class="cat-text">Music</p>
+            </button>
+
+            <button class="cat-button">
+                <i class="fas fa-book-medical"></i>
+                <p class="cat-text">Health</p>
+            </button>
+
+            <button class="cat-button">
+                <i class="fas fa-tree"></i>
+                <p class="cat-text">Outdoors</p>
+            </button>
+
+            <button class="cat-button">
+                <i class="fas fa-dog"></i>
+                <p class="cat-text">Pets</p>
+            </button>
+        </div>
+
+        <div id="events-body">
+            <h2>Events in New York</h2>
+            <div id="events-cards">
+                <div id="event-1" class="event-card">
+                    <div class="image-box">
+                        <img class="event-image"
+                            src="https://appacademy-open-assets.s3.us-west-1.amazonaws.com/Modular-Curriculum/content/week-07/EventSight/new-york-city-sunset-skyline-river.jpg"
+                            alt="Image of event 1">
+                    </div>
+
+                    <div class="event-text">
+                        <h3><a class="event-title" href="">Disco New York Halloween</a></h3>
+                        <p class="event-date">October 31, 2023</p>
+                        <p class="event-cost">Starts at $54.98</p>
+                    </div>
+                </div>
+
+                <div id="event-2" class="event-card">
+                    <div class="image-box">
+                        <img class="event-image"
+                            src="https://appacademy-open-assets.s3.us-west-1.amazonaws.com/Modular-Curriculum/content/week-07/EventSight/new-york-city-brooklyn-bridge-river.jpg"
+                            alt="Image of event 2">
+                    </div>
+
+                    <div class="event-text">
+                        <h3><a class="event-title" href="">Tech Outdoor Networking Event</a></h3>
+                        <p class="event-date">September 7, 2023</p>
+                        <p class="event-cost">$10 Donation</p>
+                    </div>
+                </div>
+
+                <div id="event-3" class="event-card">
+                    <div class="image-box">
+                        <img class="event-image"
+                            src="https://appacademy-open-assets.s3.us-west-1.amazonaws.com/Modular-Curriculum/content/week-07/EventSight/new-york-manhattan-city-street-yellow-cabs.jpg"
+                            alt="Image of event 3">
+                    </div>
+
+                    <div class="event-text">
+                        <h3><a class="event-title" href="">Online Dance Party</a></h3>
+                        <p class="event-date">August 31, 2023</p>
+                        <p class="event-cost">FREE on Zoom!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="see-more">
+            <button>See More</button>
+        </div>
+
+        <footer>
+            <div>
+                <p>@2022 EventSight</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
