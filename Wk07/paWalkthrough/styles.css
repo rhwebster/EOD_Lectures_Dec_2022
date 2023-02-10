@@ -1,0 +1,175 @@
+body {
+    background-color: #eeedf2;
+    color: #6f7287;
+    font-family: "Neue Plak",
+        sans-serif;
+}
+
+h1 {
+    color: #f05537;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.25rem;
+}
+
+.nav-link {
+    color: #f05537;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 20px;
+}
+
+#search-button {
+    width: 250px;
+    height: 50px;
+    background-color: white;
+    border: none;
+    font-size: 1rem;
+}
+
+input {
+    width: 200px;
+    height: 40px;
+    border: none;
+}
+
+button {
+    border: solid 1px;
+    color: #6f7287;
+    box-shadow: 2px 2px 5px #6f7287;
+}
+
+a:hover {
+    color: #f05537;
+}
+
+button:hover {
+    color: #f05537;
+    box-shadow: 2px 2px 5px #f05537;
+}
+
+#category-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.cat-button {
+    align-self: stretch;
+}
+
+.cat-button p {
+    display: inline-flex;
+}
+
+a,
+button,
+i {
+    cursor: pointer;
+}
+
+#events-cards {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-areas: ".event-card" ".event-card";
+    grid-gap: 20px
+}
+
+.event-card {
+    display: grid;
+    grid-template-rows: 1.5fr;
+    grid-template-areas: "image" "text";
+}
+
+.image-box {
+    grid-area: "image";
+}
+
+.event-image {
+    display: block;
+    width: 100%;
+    max-height: 200px;
+    align-self: center;
+}
+
+.event-text {
+    grid-area: text;
+    align-content: center;
+    margin: 5px 15px;
+}
+
+.event-cost {
+    text-align: end;
+}
+
+#see-more {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+#see-more button {
+    width: 200px;
+    padding: 20px;
+}
+
+footer {
+    background-color: #1e0a3c;
+    color: #FFFFFF;
+    padding: 20px;
+    text-align: end;
+}
+
+@media screen and (max-width: 700px) {
+    nav {
+        display: inline-block;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        font-size: 1.25rem;
+    }
+
+    #search-button {
+        width: 100%;
+    }
+
+    .link-container {
+        padding-top: 25px;
+    }
+
+    #category-cards {
+        grid-template-columns: auto;
+    }
+
+    #events-cards {
+        display: block;
+    }
+
+    .event-card {
+        text-align: center;
+        border: none;
+        grid-template-rows: 3fr 1fr;
+    }
+
+    .image-box {
+        width: auto;
+    }
+
+    .event-image {
+        width: 100%;
+        max-height: max-content;
+    }
+
+    .event-text {
+        width: 100%;
+        max-height: max-content;
+        margin: 0;
+    }
+}
