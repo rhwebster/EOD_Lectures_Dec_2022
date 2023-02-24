@@ -4,8 +4,17 @@ const fs = require('fs');
 const url = "https://zenquotes.io/api/random";
 
 
-const getQuote = () => {
+const getQuote = async () => {
+    try {
+        const res = await fetch(url);
+        console.log(res);
+        const quote = await res.json();
+        const {q,a,h} = quote[0]
 
+        return {q, a};
+    } catch (error) {
+        console.error(error);
+    }
 };
 
 const server = http.createServer((req, res) => {
@@ -25,7 +34,7 @@ const server = http.createServer((req, res) => {
         if (req.method === "GET" && req.url === "/") {
             const htmlFile = fs.readFileSync("./views/index.html", "utf-8");
             const resBody = htmlFile
-                .replace(/#{quote}/g, 'Click below for your first quote');
+                .replace(/#{quote}/, 'Click below for your first quote');
 
             res.statusCode = 200;
             res.setHeader("Content-Type", "text/html");
@@ -34,14 +43,26 @@ const server = http.createServer((req, res) => {
         }
 
         if (req.method === "POST" && req.url === "/quote") {
-            //retrieve the quote
-
+            //retrieve the quote using getQuote() helper
+            const quote = await getQuote();
+            
+            
+            
             //console log data
-
-            //if successfull
-
-            //else
-
+            console.log(quote);
+            //if successful: show "'Text Body' - Author"
+            if (quote) {
+                const htmlFile = fs.readFileSync("./views/index.html", "utf-8");
+                let resBody = htmlFile
+                    .replace(/#{quote}/, `${quote.q} -${quote.a}`);
+                res.statusCode = 200;
+                res.setHeader("Content-Type", "text/html");
+                res.write(resBody);
+                return res.end();
+            } else {
+                //else: redirect back to home page
+                return redirectTo('/');
+            }
         }
     })
 });
