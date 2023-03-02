@@ -1,0 +1,3 @@
+server/*.db
+server/.env
+server/node_modules
