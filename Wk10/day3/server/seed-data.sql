@@ -1,27 +1,45 @@
+PRAGMA foreign_keys = ON;
+
+DROP TABLE IF EXISTS groups;
 DROP TABLE IF EXISTS elements;
+
+CREATE TABLE groups (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(50)
+);
 
 CREATE TABLE elements (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name VARCHAR(50) UNIQUE,
     atomic_number INTEGER UNIQUE,
     abbreviation VARCHAR(2) UNIQUE,
-    element_group VARCHAR(50)
+    group_id INTEGER REFERENCES groups(id)
 );
 
-INSERT INTO elements (name, atomic_number, abbreviation, element_group)
+INSERT INTO groups (name)
 VALUES
-    ('Oxygen', 8, 'O', 'Reactive nonmetals'),
-    ('Krypton', 36, 'Kr', 'Noble gases'),
-    ('Silicon', 14, 'Si', 'Metalloids'),
-    ('Helium', 2, 'He', 'Noble gases'),
-    ('Sodium', 11, 'Na', 'Alkali Metals'),
-    ('Silver', 47, 'Au', 'Transition Metals'),
-    ('Carbon', 6, 'C', 'Reactive nonmetals'),
-    ('Argon', 18, 'Ar', 'Noble gases'),
-    ('Chlorine', 17, 'Cl', 'Reactive nonmetals'),
-    ('Tin', 50, 'Sn', 'Alkali metals'),
-    ('Boron', 5, 'B', 'Metalloids'),
-    ('Radon', 86, 'Rn', 'Noble gases'),
-    ('Hydrogen', 1, 'H', 'Reactive nonmetals')
-    ('Aluminum', 13, 'Al', 'Post-transition metals'),
-    ('Unobtanium', 310, 'Ubh', 'Pandora metals');
+    ('Reactive nonmetals'),
+    ('Noble gases'),
+    ('Metalloids'),
+    ('Alkali Metals'),
+    ('Transition Metals'),
+    ('Post-transition metals'),
+    ('Pandora metals')
+
+INSERT INTO elements (name, atomic_number, abbreviation, group_id)
+VALUES
+    ('Oxygen', 8, 'O', 1),
+    ('Krypton', 36, 'Kr', 2),
+    ('Silicon', 14, 'Si', 3),
+    ('Helium', 2, 'He', 2),
+    ('Sodium', 11, 'Na', 4),
+    ('Silver', 47, 'Au', 5),
+    ('Carbon', 6, 'C', 1),
+    ('Argon', 18, 'Ar', 2),
+    ('Chlorine', 17, 'Cl', 1),
+    ('Tin', 50, 'Sn', 4),
+    ('Boron', 5, 'B', 3),
+    ('Radon', 86, 'Rn', 2),
+    ('Hydrogen', 1, 'H', 1)
+    ('Aluminum', 13, 'Al', 6),
+    ('Unobtanium', 310, 'Ubh', 7);
