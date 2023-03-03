@@ -22,5 +22,6 @@ VALUES
     ('Tin', 50, 'Sn', 'Alkali metals'),
     ('Boron', 5, 'B', 'Metalloids'),
     ('Radon', 86, 'Rn', 'Noble gases'),
-    ('Aluminum', 13, 'Al', 'Post-transition metals');
-    ('Unobtanium', 310, 'Ubh', 'Pandora metals')
+    ('Hydrogen', 1, 'H', 'Reactive nonmetals')
+    ('Aluminum', 13, 'Al', 'Post-transition metals'),
+    ('Unobtanium', 310, 'Ubh', 'Pandora metals');

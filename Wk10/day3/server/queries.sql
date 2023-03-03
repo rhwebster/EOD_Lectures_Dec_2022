@@ -10,6 +10,9 @@
 -- Get names, atomic numbers, and names of groups of all elements
 
 
+-- Get all elements who's abbreviation starts with 'H'
+
+
 -- Get names of all elements that are metalloids
 
 
