@@ -14,4 +14,13 @@ VALUES
     ('Krypton', 36, 'Kr', 'Noble gases'),
     ('Silicon', 14, 'Si', 'Metalloids'),
     ('Helium', 2, 'He', 'Noble gases'),
-    ('Sodium', 11, 'Na', 'Alkali Metals');
+    ('Sodium', 11, 'Na', 'Alkali Metals'),
+    ('Silver', 47, 'Au', 'Transition Metals'),
+    ('Carbon', 6, 'C', 'Reactive nonmetals'),
+    ('Argon', 18, 'Ar', 'Noble gases'),
+    ('Chlorine', 17, 'Cl', 'Reactive nonmetals'),
+    ('Tin', 50, 'Sn', 'Alkali metals'),
+    ('Boron', 5, 'B', 'Metalloids'),
+    ('Radon', 86, 'Rn', 'Noble gases'),
+    ('Aluminum', 13, 'Al', 'Post-transition metals');
+    ('Unobtanium', 310, 'Ubh', 'Pandora metals')
